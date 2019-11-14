@@ -20,6 +20,28 @@ def header(author, title, width=1000, height=1000):
     inkscape:version="0.92.3 (2405546, 2018-03-11)">
     >
 
+<sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1080"
+   id="namedview1385"
+   showgrid="false"
+   inkscape:pagecheckerboard="true"
+   inkscape:zoom="0.295"
+   inkscape:cx="369.49153"
+   inkscape:cy="430.50847"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg802" />
+
     <metadata
         id="metadata808">
         <rdf:RDF>

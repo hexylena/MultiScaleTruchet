@@ -5,11 +5,11 @@ import svg
 import quadtree
 
 
-print(svg.header(author="GalPals", title="Multiscale Truchet", width=800, height=800))
+print(svg.header(author="Helena", title="Multiscale Truchet", width=800, height=800))
 
 
 pieces = []
-for file in sorted(glob.glob("*.path")):
+for file in sorted(glob.glob("svgs/*.path")):
     with open(file, "r") as handle:
         pieces.append(handle.read())
 

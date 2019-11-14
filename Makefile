@@ -1,4 +1,4 @@
-INPUTS := $(wildcard [0-9]*.svg)
+INPUTS := $(wildcard svgs/[0-9]*.svg)
 PATHS := $(INPUTS:svg=path)
 PNGS := $(INPUTS:svg=png)
 

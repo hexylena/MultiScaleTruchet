@@ -1,17 +1,12 @@
-import glob
 import sys
 import random
-import svg
-import quadtree
+
+from multiscaletruchet import TILES
+import multiscaletruchet.svg as svg
+import multiscaletruchet.quadtree as quadtree
 
 
 print(svg.header(author="Helena", title="Multiscale Truchet", width=800, height=800))
-
-
-pieces = []
-for file in sorted(glob.glob("svgs/*.path")):
-    with open(file, "r") as handle:
-        pieces.append(handle.read())
 
 
 def piece(part, scale=None, offset=None):
@@ -30,7 +25,7 @@ def invert(piece):
 
 
 for i, child in enumerate(sorted(q.all_children(), key=lambda x: x.depth)):
-    p = random.choice(pieces)
+    p = random.choice(TILES)
     x = child.x0 * 0.9
     y = child.y0 * 0.9
 

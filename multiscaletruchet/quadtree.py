@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from dataclasses import field
 import random
-import svg
 
 # quadtree
 @dataclass
@@ -79,10 +78,11 @@ def init(size=100):
 
 
 if __name__ == "__main__":
+    import multiscaletruchet.svg as svg
     q = init()
     q.random_divide()
 
-    print(svg.header(author="GalPals", title="Multiscale Truchet"))
+    print(svg.header(author="MultiScaleTruchet", title="Multiscale Truchet"))
 
     for x in q.all_children():
         if x.enabled:

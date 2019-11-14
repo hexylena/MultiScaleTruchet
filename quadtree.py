@@ -49,22 +49,38 @@ class QTree:
                 if child.enabled:
                     yield child
 
+    def random_divide(self, kids=25):
+        while True:
+            if len(list(self.all_children())) > kids:
+                break
 
-def divided_tree(kids=25):
+            kid = random.choice(list(self.all_children()))
+            kid.subdivide()
+
+    def divide_min_depth(self, min_kids=25, min_depth=3):
+        while True:
+            kids = sorted(list(self.all_children()), key=lambda x: x.depth)
+            if kids[0].depth <= min_depth:
+                kids[0].subdivide()
+            else:
+                if len(list(self.all_children())) > min_kids:
+                    break
+
+                kid = random.choice(kids)
+                kid.subdivide()
+
+
+
+def init():
     root = Node(0, 0, 100, 100)
     q = QTree(root)
-
-    while True:
-        if len(list(q.all_children())) > kids:
-            break
-
-        kid = random.choice(list(q.all_children()))
-        kid.subdivide()
     return q
 
 
+
 if __name__ == '__main__':
-    q = divided_tree()
+    q = init()
+    q.random_divide()
 
 
     print(svg.header(author="GalPals", title="Multiscale Truchet"))

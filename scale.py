@@ -19,14 +19,16 @@ def piece(part, scale=None, offset=None):
     return f"""<g transform="{transform}">{part}</g>"""
 
 
-q = quadtree.divided_tree(kids=15)
+q = quadtree.init()
+# q.random_divide(kids=0)
+q.divide_min_depth(min_depth=3, min_kids=100)
 
 
 def invert(piece):
     return piece.replace('#ffffff', 'black').replace('#000000', 'white')
 
 for i, child in enumerate(sorted(q.all_children(), key=lambda x: x.depth)):
-    p = random.choice(pieces[3:9])
+    p = random.choice(pieces)
     x = child.x0 * .9
     y = child.y0 * .9
 

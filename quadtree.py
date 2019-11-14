@@ -72,8 +72,8 @@ class QTree:
                 kid.subdivide()
 
 
-def init():
-    root = Node(0, 0, 100, 100)
+def init(size=100):
+    root = Node(0, 0, size, size)
     q = QTree(root)
     return q
 

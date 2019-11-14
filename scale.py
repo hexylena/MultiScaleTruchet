@@ -5,7 +5,7 @@ import svg
 import quadtree
 
 
-print(svg.header(author="GalPals", title="Multiscale Truchet", width=90, height=90))
+print(svg.header(author="GalPals", title="Multiscale Truchet", width=800, height=800))
 
 
 pieces = []
@@ -20,7 +20,7 @@ def piece(part, scale=None, offset=None):
     return f"""<g transform="{transform}">{part}</g>"""
 
 
-q = quadtree.init()
+q = quadtree.init(size=900)
 # q.random_divide(kids=0)
 q.divide_min_depth(min_depth=3, min_kids=100)
 
@@ -40,7 +40,7 @@ for i, child in enumerate(sorted(q.all_children(), key=lambda x: x.depth)):
         pi = p
 
     sys.stderr.write(f"{i} - {x} {y} {child.width} {child.depth}\n")
-    sys.stdout.write(piece(pi, offset=(x, y), scale=2 ** (1 + -child.depth)))
+    sys.stdout.write(piece(pi, offset=(x, y), scale=9 * 2 ** (1 + -child.depth)))
 
 
 print(svg.footer())

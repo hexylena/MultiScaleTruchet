@@ -40,9 +40,10 @@ def header(author, title, width=1000, height=1000):
     </metadata>
     """
 
+
 def footer():
     return "</svg>"
 
 
 def random_color():
-    return ''.join([hex(random.choice(range(16)))[2] for _ in range(6)])
+    return "".join([hex(random.choice(range(16)))[2] for _ in range(6)])

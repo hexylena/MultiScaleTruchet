@@ -49,16 +49,17 @@ TPL = f"""<?xml version="1.0" encoding="utf-8"?>
 sys.stdout.write(TPL)
 
 
-
 pieces = []
 for file in sorted(glob.glob("*.path")):
-    with open(file, 'r') as handle:
+    with open(file, "r") as handle:
         pieces.append(handle.read())
+
 
 def piece(part, offset=None):
     x, y = offset
-    transform = f'translate({x}, {y})'
+    transform = f"translate({x}, {y})"
     return f"""<g transform="{transform}">{part}</g>"""
+
 
 o = 90
 
@@ -68,4 +69,4 @@ for r in range(M):
         sys.stdout.write(piece(p, offset=(c * o, r * o)))
 
 
-sys.stdout.write('</svg>')
+sys.stdout.write("</svg>")

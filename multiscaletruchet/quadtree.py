@@ -4,12 +4,6 @@ import random
 
 # quadtree
 @dataclass
-class Point:
-    x: float
-    y: float
-
-
-@dataclass
 class Node:
     x0: float
     y0: float
